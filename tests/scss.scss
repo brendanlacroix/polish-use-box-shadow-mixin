@@ -1,0 +1,17 @@
+/* should fail */
+.evil-class {
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
+
+  .bad {
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
+  }
+}
+
+/* should pass */
+.cool-really-good-selector {
+  @include box-shadow;
+
+  .nested {
+    @include box-shadow;
+  }
+}
